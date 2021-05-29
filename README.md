@@ -20,5 +20,5 @@ My Reads App for every one need to read can search for intresting book in libara
 
 ## License
 
-EVALUATE NEWS ARTICLE is an open source project by [EVALUATE NEWS ARTICLE][mit](https://opensource.org/licenses/MIT).
-EVALUATE NEWS ARTICLE reserves the right to change the license of future releases.
+MyReads App is an open source project by [EVALUATE NEWS ARTICLE][mit](https://opensource.org/licenses/MIT).
+MyReads App reserves the right to change the license of future releases.
