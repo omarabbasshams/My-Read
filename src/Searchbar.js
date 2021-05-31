@@ -15,7 +15,16 @@ class Searchbar extends Component {
         if (books.error === "empty query") {
           this.setState({ condition: false });
         } else {
-          this.setState({ books: books, condition: true });
+          const shelfbook = books.map((b) => {
+            for (let x in this.props.booksforshelf) {
+              if (b.id === this.props.booksforshelf[x].id) {
+                b.shelf = this.props.booksforshelf[x].shelf;
+              }
+            }
+            return b;
+          });
+
+          this.setState({ books: shelfbook, condition: true });
         }
       });
     } else {
@@ -42,13 +51,8 @@ class Searchbar extends Component {
         <div className="search-books-results">
           <ol className="books-grid">
             {this.state.condition &&
-              this.state.books.map((book, index) => (
-                <Book
-                  OnMove={OnMove}
-                  book={book}
-                  key={`${book.id}`}
-                  shelfnone="none"
-                />
+              this.state.books.map((book) => (
+                <Book OnMove={OnMove} book={book} key={`${book.id}`} />
               ))}
             {!this.state.condition && <h1>Not Found</h1>}
           </ol>

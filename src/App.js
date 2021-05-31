@@ -33,7 +33,12 @@ class BooksApp extends React.Component {
           <Route
             exact
             path="/search"
-            render={() => <Searchbar OnMove={this.movebooks} />}
+            render={() => (
+              <Searchbar
+                OnMove={this.movebooks}
+                booksforshelf={this.state.books}
+              />
+            )}
           />
 
           <Route

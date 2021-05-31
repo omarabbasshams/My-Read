@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Book extends Component {
   render() {
-    const { book, OnMove, shelfnone } = this.props;
+    const { book, OnMove } = this.props;
     return (
       <li>
         <div className="book">
@@ -19,7 +19,7 @@ class Book extends Component {
             <div className="book-shelf-changer">
               <select
                 onChange={(e) => OnMove(book, e.target.value)}
-                defaultValue={shelfnone ? shelfnone : book.shelf}
+                defaultValue={book.shelf === undefined ? "none" : book.shelf}
               >
                 <option value="move" disabled>
                   ...move to
